@@ -1,0 +1,28 @@
+{
+  "note": "Baseline captured from the initial public release. Regenerate with: python eval/check_spec.py --save-baseline",
+  "config": {
+    "ARM_LENGTH_MM": 116.0,
+    "ARM_WIDTH_MM": 7.8,
+    "ARM_THICKNESS_MM": 4.5,
+    "TOOTH_COUNT": 32,
+    "TOOTH_START_MM": 13.5,
+    "TOOTH_END_MM": 98.0,
+    "PIN_RADIUS_MM": 1.12,
+    "PIN_CLEARANCE_MM": 0.46,
+    "HINGE_KNUCKLE_GAP_MM": 0.48,
+    "OPEN_ANGLE_DEG": 36
+  },
+  "expected_automated_pass_rate": "28/28",
+  "geometry": {
+    "arm_left":    {"watertight": true, "components": 1, "degenerate_faces": 0},
+    "arm_right":   {"watertight": true, "components": 1, "degenerate_faces": 0},
+    "hinge_pin":   {"watertight": true, "components": 1, "degenerate_faces": 0},
+    "hinge_cotter":{"watertight": true, "components": 1, "degenerate_faces": 0}
+  },
+  "kinematics": {
+    "simulation_passed": true,
+    "open_angle_deg": 36,
+    "open_gap_min_mm": 12.0,
+    "barrel_axial_clearance_mm": 0.48
+  }
+}

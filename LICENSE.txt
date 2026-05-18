@@ -1,0 +1,1 @@
+MIT-style educational prototype license. Use, modify, print, and teach with this project at your own risk. No warranty is provided; physical fit and safety must be tested by the user.

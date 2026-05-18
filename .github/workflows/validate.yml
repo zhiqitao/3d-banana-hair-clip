@@ -1,0 +1,28 @@
+name: Validate banana clip geometry
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Generate design-final STLs
+        run: python scripts/banana_clip_design_final.py --no-previews
+      - name: Validate geometry
+        run: python scripts/validate_geometry.py
+      - name: CadQuery validation is local
+        run: |
+          echo "Mesh validation is the required CI gate."
+          echo "CadQuery/OpenCascade validation is documented as a local workflow because CAD kernel wheels can be slow or platform-sensitive in CI."
+          echo "Run locally: pip install -r requirements-cadquery.txt && python cadquery/validate_cq.py"
